@@ -22,13 +22,13 @@ password: {
 role: {
     type: String,
     enum: [constants.BOSS_ROLE, constants.DEVELOPER_ROLE, constants.TA_ROLE],
-    default: constants.DEVELOPER_ROLE;
+    default: constants.DEVELOPER_ROLE
 }
 })
 
 userSchema.pre('save', function(next) {
     if(this.email === FIRST_ADMIN_MAIL) {
-        this.role ==== constants.BOSS_ROLE;
+        this.role === constants.BOSS_ROLE;
     }
 
     if(this.isModified("password")){
